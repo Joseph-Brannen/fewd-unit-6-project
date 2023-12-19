@@ -10,3 +10,11 @@ overlay.addEventListener( 'click', (e) => {
         overlay.style.display = 'none';
     }
 });
+
+const phrases = [
+    'these pretzels are making me thirsty',
+    'not that theres anything wrong with that',
+    'no soup for you',
+    'serenity now',
+    'george is getting upset'
+];
