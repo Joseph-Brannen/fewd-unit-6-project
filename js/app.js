@@ -18,3 +18,9 @@ const phrases = [
     'serenity now',
     'george is getting upset'
 ];
+
+function getRandomPhraseAsArray(arr) {
+    const randomElement = arr[Math.floor(Math.random() * arr.length)];
+    const characters = randomElement.split("");
+    return characters;
+}
