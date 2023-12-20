@@ -41,3 +41,35 @@ function addPhraseToDisplay(arr) {
 
 const phraseArray = getRandomPhraseAsArray(phrases);
 addPhraseToDisplay(phraseArray);
+
+
+
+
+
+function checkLetter(btn) {
+    const letter = document.querySelectorAll('li .letter');
+    for ( let i = 0; i < btn.length; i++ ) {
+        if ( btn[i].className === '.letter' ) {
+            letter.classList.add = 'show';
+            const letterMatch = btn[i];
+        } else {
+            return null;
+        }
+    }
+    return letterMatch;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
