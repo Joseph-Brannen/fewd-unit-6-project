@@ -44,32 +44,24 @@ addPhraseToDisplay(phraseArray);
 
 
 
-
 function checkLetter(button) {
     const letterClass = document.getElementsByClassName('letter');
     for ( let i = 0; i < letterClass.length; i++ ) {
         if ( button.textContent === letterClass[i].textContent ) {
-            letterClass[i].classList.add = 'show';
+            letterClass[i].classList.add('show');
         } else {
-            return console.log('no match');
+            missed += 1;
         }
     }
 }
-
-
-
 
 qwerty.addEventListener( 'click', (e) => {
     if ( e.target.tagName === 'BUTTON' ) {
         e.target.className = 'chosen';
         e.target.disabled = 'true';
+        checkLetter(e.target);
     }
-    checkLetter(e);
 });
-
-
-
-
 
 
 
