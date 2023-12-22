@@ -43,45 +43,6 @@ const phraseArray = getRandomPhraseAsArray(phrases);
 addPhraseToDisplay(phraseArray);
 
 
-// Steps 7 & 8 Commented Out Below (before adding 9 & 10)
-/*
-function checkLetter(button) {
-    const letterClass = document.getElementsByClassName('letter');
-    let letterMatch = null;
-    for ( let i = 0; i < letterClass.length; i++ ) {
-        console.log('letterClass[i].textContent', letterClass[i].textContent);
-        if ( button.textContent === letterClass[i].textContent ) {
-            console.log('true');
-            letterMatch = 'true';
-            if (letterMatch === 'true') {
-                letterClass[i].classList.add('show');
-            }
-        } else {
-            console.log('false');
-            letterMatch;
-        }
-    }
-    return letterMatch;  
-}
-
-qwerty.addEventListener( 'click', (e) => {
-    if ( e.target.tagName === 'BUTTON' ) {
-        e.target.className = 'chosen';
-        e.target.disabled = 'true';
-        const letterFound = checkLetter(e.target);
-        console.log('letterFound', letterFound);
-        if (letterFound !== 'true') {
-            missed += 1;
-        }
-    } 
-});
-*/
-
-
-
-
-// Steps 7, 8, & 9 Commented Out Below (before adding step 10)
-
 function checkLetter(button) {
     const letterClass = document.getElementsByClassName('letter');
     let letterMatch = null;
@@ -128,11 +89,24 @@ qwerty.addEventListener( 'click', (e) => {
             heartFive.src = "images/lostHeart.png";
         }
     }
+    checkWin();
 });
 
 
-
-
+function checkWin() {
+    const letter = document.getElementsByClassName('letter');
+    const show = document.getElementsByClassName('show');
+    let headline = document.querySelector('h2');
+    if ( letter.length === show.length ) {
+        overlay.classList.add('win');
+        headline.textContent = 'You won!';
+        overlay.style.display = 'flex';
+    } else if ( missed > 4 ) {
+        overlay.classList.add('lose');
+        headline.textContent = 'You lost!';
+        overlay.style.display = 'flex';
+    } 
+}
 
 
 
