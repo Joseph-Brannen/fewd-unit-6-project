@@ -80,6 +80,8 @@ qwerty.addEventListener( 'click', (e) => {
 
 
 
+// Steps 7, 8, & 9 Commented Out Below (before adding step 10)
+
 function checkLetter(button) {
     const letterClass = document.getElementsByClassName('letter');
     let letterMatch = null;
