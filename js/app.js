@@ -47,15 +47,12 @@ function checkLetter(button) {
     const letterClass = document.getElementsByClassName('letter');
     let letterMatch = null;
     for ( let i = 0; i < letterClass.length; i++ ) {
-        console.log('letterClass[i].textContent', letterClass[i].textContent);
         if ( button.textContent === letterClass[i].textContent ) {
-            console.log('true');
             letterMatch = 'true';
             if (letterMatch === 'true') {
                 letterClass[i].classList.add('show');
             }
         } else {
-            console.log('false');
             letterMatch;
         }
     }
@@ -67,7 +64,6 @@ qwerty.addEventListener( 'click', (e) => {
         e.target.className = 'chosen';
         e.target.disabled = 'true';
         const letterFound = checkLetter(e.target);
-        console.log('letterFound', letterFound);
         if (letterFound !== 'true') {
             missed += 1;
         }
